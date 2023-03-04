@@ -1,7 +1,3 @@
-
-Создаем папку GitHub в папке Vadim на диске D
-Далее: git clone https://github.com/Andrey181818/group_26.git
-Ссылку берем из внешнего репозитория на Git Hub.
 Лайф хак: чтобы скоировать в Баш ссылку используем сочетание клавиш: Shift+Insert
 Получаем: Cloning into 'group_26'...
 remote: Enumerating objects: 3, done.
