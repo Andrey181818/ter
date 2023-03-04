@@ -1,0 +1,82 @@
+
+Создаем папку GitHub в папке Vadim на диске D
+Далее: git clone https://github.com/Andrey181818/group_26.git
+Ссылку берем из внешнего репозитория на Git Hub.
+Лайф хак: чтобы скоировать в Баш ссылку используем сочетание клавиш: Shift+Insert
+Получаем: Cloning into 'group_26'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+Далее: ls –la
+Получаем: total 0
+drwxr-xr-x 1 User436578 197121 0 Feb 19 17:53 ./
+drwxr-xr-x 1 User436578 197121 0 Feb 19 17:42 ../
+drwxr-xr-x 1 User436578 197121 0 Feb 19 17:53 group_26/
+
+Далее: cd group_26
+Получаем: /d/Vadik/GitHub/group_26 (main)
+Появилась надпись (main) – это в какой ветке мы находимся. Терминал отрабатывает функцию Гита. Мы зашли в  репозиторию Гит Хаба у себя локально на компе и сейчас с этим будем работать. А терминал подхватил. А.. Это Гит Хаб и главная ветка (main). И он это всё дело подсветил. 
+
+Далее: cat > terminal_lesson_1.txt
+cd
+mkdir
+touch
+vim
+pwd
+rm
+mv
+
+Далее: ls –la
+Получили: total 6
+drwxr-xr-x 1 User436578 197121  0 Feb 19 18:26 ./
+drwxr-xr-x 1 User436578 197121  0 Feb 19 17:53 ../
+drwxr-xr-x 1 User436578 197121  0 Feb 19 17:53 .git/
+-rw-r--r-- 1 User436578 197121 10 Feb 19 17:53 README.md
+-rw-r--r-- 1 User436578 197121 29 Feb 19 18:29 terminal_lesson_1.txt
+
+Теперь нужно создать коммит и отправить его на внешний репозиторий. Коммит – это фотография состояния вашей папки. Вот есть у нас в папочке папочка Гит, редми и т д. Мы как будто берем и скрин шот делаем и сохраняем это фото, где отражено то, что там у вас есть. Если вы что-то измените, то надо делать уже следующий коммит. Потому, что на внешний репозиторий улетают коммиты, улетают состояния папочки репозитория. И вы на внешнем репозитории видите состояния, которые у вас на локальном компьютере. То есть условно, если вы сейчас коммитните файлик (терминал) и отправите на внешний репозиторий, то отправится ровно этот файлик (терминал). Если вы добавите другой файл, но не сделаете коммит, то на внешний репозиторий вы ничего не отправите. Гит Хаб будет ругаться, что у вас нету коммита. Сделайте коммит и только тогда отправляйте на внешний репозиторий. Тайминг: 35:09 Спич Вадима про то как мы на работе будем работать с Гитом.
+
+Дальше. Отслеживание чего у нас там – поможет Гит статус.
+Делаем: git status
+Получаем: 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        terminal_lesson_1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+terminal_lesson_1.txt – неотслеживаемый файл. Чтобы отследить 	его:
+Делаем: git add terminal_lesson_1.txt
+Получаем: warning: in the working copy of 'terminal_lesson_1.txt', LF will be replaced by CRLF the next time Git touches it.
+
+Если все неотлеживаемые нужно добавить в отслеживаемые, то:
+Делаем: git add .
+
+Проверяем: git status
+Получаем: On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   terminal_lesson_1.txt
+
+Делаем: git commit -m "Linux commands 1"
+Получаем: [main d84617d] Linux commands 1
+ 1 file changed, 7 insertions(+)
+ create mode 100644 terminal_lesson_1.txt
+
+Делаем: git status
+Получаем: On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Далее: git push
+Получаем: warning: could not find UI helper 'GitHub.UI'
+И ждет ввода (это ошибка)
